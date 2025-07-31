@@ -46,7 +46,7 @@ export class VehicleSearchComponent implements OnInit {
   }
 
 fetchAllvehicleMakes(){
- this.http.get('http://localhost:3000/makes').subscribe({
+ this.http.get('http://52.16.69.88:3000/makes').subscribe({
   next:(res:any)=>{
     console.log("success:",res)
     this.allmakes =  res?.data
@@ -55,7 +55,7 @@ fetchAllvehicleMakes(){
 }
 
 fetchAllModelByMake(make:string){
-  this.http.get(`http://localhost:3000/models/${make}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/models/${make}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.allModels =  res?.data
@@ -64,7 +64,7 @@ fetchAllModelByMake(make:string){
  }
 
  fetchEngine(){
-  this.http.get(`http://localhost:3000/engines/${this.selectedMake}/${this.selectedModel}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/engines/${this.selectedMake}/${this.selectedModel}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.allEngines = res?.data
@@ -73,7 +73,7 @@ fetchAllModelByMake(make:string){
  }
 
  fetchYears(){
-  this.http.get(`http://localhost:3000/years/${this.selectedMake}/${this.selectedModel}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/years/${this.selectedMake}/${this.selectedModel}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.allYears = res?.data
@@ -82,7 +82,7 @@ fetchAllModelByMake(make:string){
  }
 
  fetchDetails(){
-  this.http.get(`http://localhost:3000/vehicle/${this.selectedMake}/${this.selectedModel}/${this.selectedEngine}/${this.selectedYear}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/vehicle/${this.selectedMake}/${this.selectedModel}/${this.selectedEngine}/${this.selectedYear}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.vehicleDetails = res?.data
@@ -91,7 +91,7 @@ fetchAllModelByMake(make:string){
  }
 
  fetchDetailsByVin(vin:any){
-  this.http.get(`http://localhost:3000/vehicle/vin/${vin}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/vehicle/vin/${vin}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.selectedEngine  = res?.data?.engdesc
@@ -106,7 +106,7 @@ fetchAllModelByMake(make:string){
  }
 
  fetchPurchaseDetailsWithVin(vin:any){
-  this.http.get(`http://localhost:3000/hunter/vin/${vin}`).subscribe({
+  this.http.get(`http://52.16.69.88:3000/hunter/vin/${vin}`).subscribe({
    next:(res:any)=>{
      console.log("success:",res)
      this.prices = res?.data
